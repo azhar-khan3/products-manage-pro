@@ -17,7 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RegisterComponent,
     LoginComponent,
     ProductComponent,
-  
+
   ],
   imports: [
     BrowserModule,

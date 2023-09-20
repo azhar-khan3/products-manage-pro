@@ -18,6 +18,8 @@ export class LoginComponent {
   ) {
   }
 
+  
+
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ["", Validators.required],
