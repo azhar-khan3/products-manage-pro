@@ -1,0 +1,59 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <b>
+        <h3>Pro Task</h3>
+      </b>
+  </div>
+  </nav>
+<br><br><br><br>
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="/assets/login.jpg" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form  [formGroup]="form" (ngSubmit)="login(form)" >
+          
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input  class="form__input"
+              formControlName="email" type="text" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+            <label class="form-label" for="form3Example3">Email</label>
+             
+            <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)"
+            class="text-danger">
+            <div *ngIf="form.get('email')?.errors?.['required']">
+             *  Email is required.
+            </div>
+          </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input class="form__input"
+            formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password" />
+              <label class="form-label" for="form3Example4">Password</label>
+              <div *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)"
+              class="text-danger">
+              <div *ngIf="form.get('password')?.errors?.['required']">
+               *  Password is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;"  type="submit" [disabled]="!form.valid">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a  type="button" routerLink="/register" class="link-danger">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
