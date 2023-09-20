@@ -15,6 +15,7 @@ router.route('/login')
 router.route('/addProduct')
           .post(createProduct);
 
+//Validating fetching data api with JWT Token using middleware 
 router.route('/products')
            .get(auth, getProducts);
 

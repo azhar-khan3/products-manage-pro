@@ -26,6 +26,7 @@ const loginUser = async (req, res)=> {
         }
         let match = await user.compareUserPassword(login.password, user.password);
         if (match) {
+            //Generating JWT Token 
             let token = jwt.sign({
                  user
                 }, process.env.JWTPRIVATEKEY, {
